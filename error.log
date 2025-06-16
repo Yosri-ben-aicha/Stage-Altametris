@@ -1,0 +1,396 @@
+2025-06-16 05:27:11,989 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.192.26.140:5000
+2025-06-16 05:27:11,989 INFO:[33mPress CTRL+C to quit[0m
+2025-06-16 05:29:27,995 DEBUG:Starting new HTTP connection (1): localhost:5000
+2025-06-16 05:29:30,229 DEBUG:Starting new HTTP connection (1): localhost:11434
+2025-06-16 05:29:44,296 DEBUG:Starting new HTTP connection (1): localhost:11434
+2025-06-16 05:29:58,344 DEBUG:Starting new HTTP connection (1): localhost:11434
+2025-06-16 05:30:10,396 ERROR:\U0001f4a5 Erreur interne inattendue
+Traceback (most recent call last):
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\util\util.py", line 39, in reraise
+    raise value
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=10)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\AppData\Local\Temp\ipykernel_31200\3735170531.py", line 30, in call_llm
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\adapters.py", line 713, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=10)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\yosri\AppData\Local\Temp\ipykernel_31200\3735170531.py", line 49, in document_code
+    doc = call_llm(code)
+          ^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 421, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x2d2a41f5460 state=finished raised ReadTimeout>]
+2025-06-16 05:30:10,470 INFO:127.0.0.1 - - [16/Jun/2025 05:30:10] "[35m[1mPOST /document HTTP/1.1[0m" 500 -
+2025-06-16 05:30:10,497 DEBUG:http://localhost:5000 "POST /document HTTP/1.1" 500 101
+2025-06-16 05:34:30,134 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.192.26.140:5000
+2025-06-16 05:34:30,134 INFO:[33mPress CTRL+C to quit[0m
+2025-06-16 05:34:40,924 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.192.26.140:5000
+2025-06-16 05:34:41,304 [INFO] [33mPress CTRL+C to quit[0m
+2025-06-16 05:38:12,728 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.192.26.140:5000
+2025-06-16 05:38:12,728 [INFO] [33mPress CTRL+C to quit[0m
+2025-06-16 05:38:15,560 [DEBUG] Starting new HTTP connection (1): localhost:5000
+2025-06-16 05:38:17,585 [INFO] API démarrée correctement.
+2025-06-16 05:38:17,586 [INFO] 127.0.0.1 - - [16/Jun/2025 05:38:17] "GET / HTTP/1.1" 200 -
+2025-06-16 05:38:17,586 [DEBUG] http://localhost:5000 "GET / HTTP/1.1" 200 68
+2025-06-16 05:38:23,022 [DEBUG] Starting new HTTP connection (1): localhost:5000
+2025-06-16 05:38:25,047 [DEBUG] Starting new HTTP connection (1): localhost:11434
+2025-06-16 05:38:39,087 [DEBUG] Starting new HTTP connection (1): localhost:11434
+2025-06-16 05:38:53,147 [DEBUG] Starting new HTTP connection (1): localhost:11434
+2025-06-16 05:39:05,199 [ERROR] Erreur serveur inattendue.
+Traceback (most recent call last):
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\util\util.py", line 39, in reraise
+    raise value
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=10)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\AppData\Local\Temp\ipykernel_29804\2355866009.py", line 24, in call_llm
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\adapters.py", line 713, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=10)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\yosri\AppData\Local\Temp\ipykernel_29804\2355866009.py", line 54, in document_code
+    documentation = call_llm(full_prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 421, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x1cd72d71df0 state=finished raised ReadTimeout>]
+2025-06-16 05:39:05,297 [INFO] 127.0.0.1 - - [16/Jun/2025 05:39:05] "[35m[1mPOST /document HTTP/1.1[0m" 500 -
+2025-06-16 05:39:05,305 [DEBUG] http://localhost:5000 "POST /document HTTP/1.1" 500 101
+2025-06-16 05:39:41,180 [DEBUG] Starting new HTTP connection (1): localhost:5000
+2025-06-16 05:39:43,213 [DEBUG] Starting new HTTP connection (1): localhost:11434
+2025-06-16 05:39:57,282 [DEBUG] Starting new HTTP connection (1): localhost:11434
+2025-06-16 05:40:11,330 [DEBUG] Starting new HTTP connection (1): localhost:11434
+2025-06-16 05:40:23,354 [ERROR] Erreur serveur inattendue.
+Traceback (most recent call last):
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\util\util.py", line 39, in reraise
+    raise value
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=10)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\AppData\Local\Temp\ipykernel_29804\2355866009.py", line 24, in call_llm
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\adapters.py", line 713, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=10)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\yosri\AppData\Local\Temp\ipykernel_29804\2355866009.py", line 54, in document_code
+    documentation = call_llm(full_prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 421, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x1cd72d73b60 state=finished raised ReadTimeout>]
+2025-06-16 05:40:23,374 [INFO] 127.0.0.1 - - [16/Jun/2025 05:40:23] "[35m[1mPOST /document HTTP/1.1[0m" 500 -
+2025-06-16 05:40:23,378 [DEBUG] http://localhost:5000 "POST /document HTTP/1.1" 500 101
+2025-06-16 05:41:47,867 [DEBUG] Starting new HTTP connection (1): localhost:5000
+2025-06-16 05:41:49,909 [DEBUG] Starting new HTTP connection (1): localhost:11434
+2025-06-16 05:42:03,972 [DEBUG] Starting new HTTP connection (1): localhost:11434
+2025-06-16 05:42:18,053 [DEBUG] Starting new HTTP connection (1): localhost:11434
+2025-06-16 05:42:30,134 [ERROR] Erreur serveur inattendue.
+Traceback (most recent call last):
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\util\util.py", line 39, in reraise
+    raise value
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\urllib3\connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=10)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\AppData\Local\Temp\ipykernel_29804\2355866009.py", line 24, in call_llm
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\requests\adapters.py", line 713, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=10)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\yosri\AppData\Local\Temp\ipykernel_29804\2355866009.py", line 54, in document_code
+    documentation = call_llm(full_prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yosri\anaconda3\envs\devstral_env\Lib\site-packages\tenacity\__init__.py", line 421, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x1cd72e3de20 state=finished raised ReadTimeout>]
+2025-06-16 05:42:30,215 [INFO] 127.0.0.1 - - [16/Jun/2025 05:42:30] "[35m[1mPOST /document HTTP/1.1[0m" 500 -
+2025-06-16 05:42:30,220 [DEBUG] http://localhost:5000 "POST /document HTTP/1.1" 500 101
